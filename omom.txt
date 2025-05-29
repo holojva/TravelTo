@@ -1,0 +1,31 @@
+
+zadacha A:
+N=int(input())
+R=[0]*N
+for i in range(N):
+        R[i]=int(input())
+m=0
+for i in R:
+    if i>m:
+        m=i
+print(m)
+zadacha B:
+s=input().split()
+A=[int(i) for i in s]
+x=A[0]
+d=A[1]
+s=A[2]
+a=0
+m=0
+dam= ((2*x-d*(s-1))/2)*s
+print(dam)
+zadacha C:
+N=input()
+n=int(input())
+m=0
+K=['nesigma']*n
+for i in range(n):
+    K[i]=input()
+    if K[i]==N:
+        m=i+1
+print(m)

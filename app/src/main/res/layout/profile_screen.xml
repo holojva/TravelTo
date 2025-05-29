@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff4e6">
+
+    <TextView
+        android:id="@+id/placeName"
+        android:layout_width="354dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="26dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:padding="20px"
+        android:text="Профиль"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/placeName2"
+        android:layout_width="241dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="13dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:padding="20px"
+        android:text="Де Бил"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/placeName" />
+
+    <TextView
+        android:id="@+id/placeName3"
+        android:layout_width="236dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="19dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:padding="20px"
+        android:text="holojva@gmail.com"
+        android:textAlignment="textEnd"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/placeName2" />
+
+    <TextView
+        android:id="@+id/placeAddress"
+        android:layout_width="171dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/rounded_corner_view"
+        android:gravity="center"
+        android:padding="20px"
+        android:text="Мои отзывы: 23"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeName3" />
+
+    <TextView
+        android:id="@+id/placeAddress8"
+        android:layout_width="171dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_corner_view"
+        android:gravity="center"
+        android:padding="20px"
+        android:text="Мои туры и точки интереса"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeAddress" />
+
+    <TextView
+        android:id="@+id/placeAddress9"
+        android:layout_width="171dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_corner_view"
+        android:gravity="center"
+        android:padding="20px"
+        android:text="Поделиться контактом"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/placeAddress8"
+        app:layout_constraintTop_toBottomOf="@+id/placeAddress7" />
+
+    <TextView
+        android:id="@+id/placeAddress7"
+        android:layout_width="171dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/rounded_corner_view"
+        android:gravity="center"
+        android:padding="20px"
+        android:text="Избранное"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/placeAddress"
+        app:layout_constraintTop_toBottomOf="@+id/placeName3" />
+
+    <TextView
+        android:id="@+id/placeAddress4"
+        android:layout_width="355dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_corner_view"
+        android:gravity="center"
+        android:padding="20px"
+        android:text="Мои карты"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeAddress8" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeName"
+        app:srcCompat="@drawable/_f28c68d2c35f389966b5a363b992d06__1_" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

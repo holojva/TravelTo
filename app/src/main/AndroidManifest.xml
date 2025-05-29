@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="TravelTo"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="Вход">
+        </activity>
+        <activity
+            android:name=".UserProfileActivity"
+            android:label="Мой профиль">
+        </activity>
+        <activity
+            android:name=".NewPointActivity"
+            android:label="Новая точка">
+        </activity>
+        <activity
+            android:name=".InfoScreenActivity"
+            android:label="Информация о точке">
+        </activity>
+        <activity
+            android:name=".MainMenuActivity"
+            android:label="Меню точки">
+        </activity>
+        <activity
+            android:name=".ReviewsActivity"
+            android:label="Отзывы">
+        </activity>
+        <activity
+            android:name=".MapChooseActivity"
+            android:label="Просмотр карты">
+        </activity>
+        <activity
+            android:name=".ReportActivity"
+            android:label="Оставить отзыв">
+        </activity>
+        <activity
+            android:name=".FavouritesActivity"
+            android:label="Избранное">
+        </activity>
+        <activity
+            android:name=".SearchActivity"
+            android:label="Избранное">
+        </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

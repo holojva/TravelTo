@@ -1,0 +1,50 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <title>Points of Interest</title>
+            <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+            <style>
+                #map { height: 400px; }
+            </style>
+        </head>
+        <body>
+            <h1>Points of Interest</h1>
+
+            <form method="get" action="/">
+                <label for="type">Filter by type:</label>
+                <select name="type" id="type">
+                    <option value="">All</option>
+                    <option value="cafe">Cafe</option>
+                    <option value="library">Library</option>
+                    <option value="store">Book Store</option>
+                    <option value="food">Food Truck</option>
+                </select>
+                <button type="submit">Filter</button>
+            </form>
+
+            <ul>
+                {% for point in points %}
+                    <li>{{ point.name }} ({{ point.address }})</li>
+                {% endfor %}
+            </ul>
+
+            <div id="map"></div>
+
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+            <script>
+                const map = L.map('map').setView([37.7750, -122.4194], 13); // Center point
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                }).addTo(map);
+
+                const points = {{ filtered_points | tojson }};
+                points.forEach(point => {
+                    L.marker([point.lat, point.lng])
+                        .addTo(map)
+                        .bindPopup(`<b>${point.name}</b><br>${point.address}`);
+                });
+            </script>
+        </body>
+        </html>
