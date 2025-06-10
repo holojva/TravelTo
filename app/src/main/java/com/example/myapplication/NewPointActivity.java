@@ -2,11 +2,14 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.webkit.ValueCallback;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -50,6 +53,36 @@ public class NewPointActivity extends AppCompatActivity {
         scanner.close();
         return content;
     }
+    private ValueCallback<Uri> mUploadMessage;
+    private final static int FILECHOOSER_RESULTCODE = 1;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode,
+                                    Intent intent) {
+        if (requestCode == FILECHOOSER_RESULTCODE) {
+            if (null == mUploadMessage)
+                return;
+            Uri result = intent == null || resultCode != RESULT_OK ? null
+                    : intent.getData();
+            mUploadMessage.onReceiveValue(result);
+            mUploadMessage = null;
+
+        }
+    }
+    class MyWebChromeClient extends WebChromeClient {
+        // The undocumented magic method override
+        // Eclipse will swear at you if you try to put @Override here
+        public void openFileChooser(ValueCallback<Uri> uploadMsg) {
+
+            mUploadMessage = uploadMsg;
+            Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+            i.addCategory(Intent.CATEGORY_OPENABLE);
+            i.setType("image/*");
+            NewPointActivity.this.startActivityForResult(
+                    Intent.createChooser(i, "Image Browser"),
+                    FILECHOOSER_RESULTCODE);
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +99,7 @@ public class NewPointActivity extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         Log.d("hi", "test3");
-        mWebView.setWebViewClient(new WebViewClient());
+        mWebView.setWebChromeClient(new MyWebChromeClient());
         webSettings.setJavaScriptEnabled(true);
         Log.d("hi", "test4");
         SharedPreferences signupSettings = getSharedPreferences("LoginSignUp", MODE_PRIVATE);
