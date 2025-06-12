@@ -70,8 +70,6 @@ public class NewPointActivity extends AppCompatActivity {
         }
     }
     class MyWebChromeClient extends WebChromeClient {
-        // The undocumented magic method override
-        // Eclipse will swear at you if you try to put @Override here
         public void openFileChooser(ValueCallback<Uri> uploadMsg) {
 
             mUploadMessage = uploadMsg;
@@ -171,9 +169,5 @@ public class NewPointActivity extends AppCompatActivity {
         });
 
         webSettings.setJavaScriptEnabled(true);
-    }
-    public void login(View view) {
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
     }
 }

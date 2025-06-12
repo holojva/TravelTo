@@ -36,10 +36,6 @@ public class FavouritesActivity extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         mWebView.setWebViewClient(new WebViewClient());
-        mWebView.zoomOut();
-        mWebView.zoomOut();
-        mWebView.zoomOut();
-        mWebView.zoomOut();
         webSettings.setJavaScriptEnabled(true);
         Bundle extras = getIntent().getExtras();
         String num;
@@ -73,7 +69,6 @@ public class FavouritesActivity extends AppCompatActivity {
                         throw new RuntimeException(e);
                     }
                     ByteArrayInputStream input = null;
-                    response = response.replaceAll("[^\\x20-\\x7e]", "");
                     Log.d("hi", response);
                     try {
                         input = new ByteArrayInputStream(response.getBytes("UTF-8"));

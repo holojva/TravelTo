@@ -26,6 +26,7 @@ public class SignUpActivity extends AppCompatActivity {
         Log.d("Button", "Clicked2");
         EditText name = (EditText)findViewById(R.id.plain_text_input2);
         String name_s = name.getText().toString();
+        name_s = name_s.replaceAll("[^a-zA-Z0-9]", "");
         SharedPreferences signupSettings = getSharedPreferences("LoginSignUp", MODE_PRIVATE);
         SharedPreferences.Editor prefEditor = signupSettings.edit();
         prefEditor.putString("user_name", name_s);
